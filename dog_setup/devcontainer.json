@@ -1,0 +1,11 @@
+{
+  "name": "ROS 2 Foxy",
+  "image": "osrf/ros:foxy-desktop",
+  "runArgs": ["--network=host", "--ipc=host", "--privileged", "-v", "/dev:/dev", "-v", "/run/udev:/run/udev:ro"],
+  "containerEnv": { "DISPLAY": "${localEnv:DISPLAY}" },
+  "mounts": ["source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind"],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/root/ros2_ws/src/${localWorkspaceFolderBasename},type=bind",
+  "workspaceFolder": "/root/ros2_ws/src/${localWorkspaceFolderBasename}",
+  "postCreateCommand": "apt-get update && apt-get install -y ros-foxy-image-transport-plugins ros-foxy-rqt-image-view",
+  "remoteUser": "root"
+}
