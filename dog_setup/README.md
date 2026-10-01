@@ -27,7 +27,7 @@ The driver only encodes and sends a stream while something is subscribed to it. 
 
 ```bash
 mkdir -p ~/orbbec_ws/src && cd ~/orbbec_ws/src
-git clone -b main https://github.com/orbbec/OrbbecSDK_ROS2.git orbbec_camera
+git clone -b main https://github.com/NKusesGithub/OrbbecSDK_ROS2.git orbbec_camera
 cd ~/orbbec_ws
 rosdep install --from-paths src --ignore-src -r -y
 sudo apt install ros-foxy-image-transport-plugins
